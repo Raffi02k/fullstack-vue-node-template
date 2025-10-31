@@ -1,70 +1,76 @@
 # ⚙️ Fullstack Template (Node.js + Vue 3 + MySQL + JWT Auth)
 
-Detta är en robust och återanvändbar mall för agila fullstack-projekt, komplett med en grundläggande autentiseringslösning. Perfekt för snabb utveckling och utbildning.
+This is a robust and reusable template for agile fullstack projects, complete with a basic authentication system. Perfect for fast development and learning environments.
 
 ---
 
-## 🧩 Teknisk Stack
+## 🧩 Tech Stack
 
 * **Frontend:** Vue 3 (Vite, Composition API, Vue Router)
 * **Backend:** Node.js (Express)
-* **Databas:** MySQL
+* **Database:** MySQL
 * **Auth:** JSON Web Tokens (JWT) + bcrypt
-* **Kommunikation:** Axios
-* **Miljö:** .env-filer och valfri Docker-konfiguration.
+* **Communication:** Axios
+* **Environment:** .env files and optional Docker configuration
 
 ---
 
-## 🚀 Starta Projektet (Lokalt)
+## 🚀 Run the Project (Locally)
 
-**Förutsättningar:** Node.js och en lokal MySQL-server.
+**Requirements:** Node.js and a local MySQL server.
 
 ### 1. Backend (Server)
 
-1.  Gå till serverkatalogen och installera beroenden:
-    ```bash
-    cd backend
-    npm install
-    ```
-2.  Skapa `.env` från exemplet och konfigurera databasen:
-    ```bash
-    cp .env.example .env
-    # Uppdatera DB_HOST, DB_USER, DB_PASS, DB_NAME och JWT_SECRET
-    ```
-3.  Kör servern:
-    ```bash
-    npm run dev
-    ```
+1. Navigate to the server directory and install dependencies:
+
+   ```bash
+   cd backend
+   npm install
+   ```
+2. Create an `.env` file from the example and configure your database:
+
+   ```bash
+   cp .env.example .env
+   # Update DB_HOST, DB_USER, DB_PASS, DB_NAME and JWT_SECRET
+   ```
+3. Run the server:
+
+   ```bash
+   npm run dev
+   ```
+
+---
 
 ### 2. Frontend (Client)
 
-1.  Gå till klientkatalogen och installera beroenden:
-    ```bash
-    cd client
-    npm install
-    ```
-2.  Skapa `.env` från exemplet:
-    ```bash
-    cp .env.example .env
-    # Kontrollera att VITE_API_BASE_URL pekar mot din backend
-    ```
-3.  Kör klienten:
-    ```bash
-    npm run dev
-    ```
+1. Navigate to the client directory and install dependencies:
+
+   ```bash
+   cd client
+   npm install
+   ```
+2. Create an `.env` file from the example:
+
+   ```bash
+   cp .env.example .env
+   # Make sure VITE_API_BASE_URL points to your backend
+   ```
+3. Run the client:
+
+   ```bash
+   npm run dev
+   ```
 
 ---
 
-## 🐳 3. Starta Projektet med Docker (Valfritt)
+## 🐳 3. Run the Project with Docker (Optional)
 
-Om du väljer att använda Docker, se till att konfigurera `server/.env` med de variabler som används i `docker-compose.yml`.
-
----
-
-## 💡 Tips för Nya Projekt
-
-1.  Klicka **"Use this template"** på GitHub.
-2.  Ersätt eller lägg till nya routes, controllers och tjänster baserat på ditt nya projekt (t.ex. skapa `boatController.js`).
-3.  Byt ut det visuella innehållet i `Home.vue` och `Dashboard.vue`.
+If you choose to use Docker, make sure to configure the `server/.env` file with the variables used in `docker-compose.yml`.
 
 ---
+
+## 💡 Tips for New Projects
+
+1. Click **"Use this template"** on GitHub.
+2. Replace or add new routes, controllers, and services based on your new project (for example, create `boatController.js`).
+3. Customize the visual content in `Home.vue` and `Dashboard.vue`.
