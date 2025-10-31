@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # MySQL Database Service
+  template-mysql:
+    image: mysql:8.0
+    container_name: template-mysql-db
+    restart: always
+    environment:
+      # Dessa variabler måste matchas i din server/.env fil (DB_HOST blir 'template-mysql')
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: template_db
+      MYSQL_USER: template_user
+      MYSQL_PASSWORD: template_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # Mappen './database/init' måste finnas i roten om du vill använda den.
+      # Annars, ta bort denna rad:
+      # - ./database/init:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
+
+  # (Valfritt, kan läggas till senare) Backend Service
+  # app-backend:
+  #   build:
+  #     context: ./server
+  #     dockerfile: Dockerfile
+  #   ...
+
+volumes:
+  mysql_data:
