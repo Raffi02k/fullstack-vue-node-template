@@ -15,6 +15,53 @@ This is a robust and reusable template for agile fullstack projects, complete wi
 
 ---
 
+## 📂 Project Structure
+
+```
+fullstack-template/
+├─ README.md
+├─ docker-compose.yml
+├─ schema.sql
+├─ backend/
+│  ├─ package.json
+│  ├─ server.js                    # Starts Express and mounts routes
+│  └─ src/
+│     ├─ controllers/
+│     │  ├─ authController.js      # Exports: register, login
+│     │  └─ userController.js      # Exports: getProfile
+│     ├─ routes/
+│     │  ├─ authRoutes.js          # Default export: Express.Router (POST /register, /login)
+│     │  └─ userRoutes.js          # Default export: Express.Router (GET /profile via protect)
+│     ├─ middleware/
+│     │  └─ authMiddleware.js      # Exports: protect (JWT verification + DB check)
+│     ├─ db/
+│     │  └─ connection.js          # Database connection (common MySQL-like client)
+│     └─ utils/
+│        └─ generateToken.js       # JWT helper function
+│
+├─ client/
+│  ├─ index.html                   # Entry point for Vite
+│  ├─ vite.config.js               # Alias '@' -> './src'
+│  ├─ package.json
+│  └─ src/
+│     ├─ main.js                   # Creates and mounts the Vue app
+│     ├─ App.vue                   # Root component; imports Navbar/Footer
+│     ├─ router/
+│     │  └─ index.js               # Vue Router: '/', '/login', '/register', '/dashboard'
+│     ├─ services/
+│     │  └─ apiService.js          # API requests (base URL to backend)
+│     ├─ components/
+│     │  ├─ Navbar.vue
+│     │  └─ Footer.vue
+│     └─ views/
+│        ├─ Home.vue
+│        ├─ Login.vue
+│        ├─ Register.vue
+│        └─ Dashboard.vue
+```
+
+---
+
 ## 🚀 Run the Project (Locally)
 
 **Requirements:** Node.js and a local MySQL server.
